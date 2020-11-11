@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const itemRouter = require('./items');
+const itemRouter = require('./controllers/item');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));

@@ -1,11 +1,13 @@
 const express = require('express');
+const ItemService = require('../services/item');
 
 const router = express.Router();
 
-router.get('/items', (req, res) => {
+router.get('/items', async ({ query }, res) => {
   // llamo a API_MELI/search?q=:query
   // ?q=query
-  res.end(req.query.q + ' query');
+  await ItemService.getItem(query.q);
+  res.end(query.q + ' query');
 });
 
 router.get('/items/:id', (req, res) => {
