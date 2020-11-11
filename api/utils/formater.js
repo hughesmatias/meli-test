@@ -16,6 +16,8 @@ module.exports = {
         decimal: item.price.toString().split(".")[1] || 00,
       },
       picture: item.thumbnail,
+      condition: item.condition,
+      free_shipping: item.shipping.free_shipping || false,
     }))],
     categories: (available_filters.find(filter => filter.id == 'category') && [...available_filters.find(filter => filter.id == 'category').values.map(item => item.name)])
   }),
