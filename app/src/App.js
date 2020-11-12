@@ -5,17 +5,20 @@ import {
 } from "react-router-dom";
 
 import Layout from './components/Layout';
+import Home from './pages/Home';
+import Item from './pages/Item';
+import Items from './pages/Items';
 
 const App = () => {
   return (
     <Router>
       <Layout>
         <Switch>
-          <Route path="/items/:id">
-            <Item />
-          </Route>
-          <Route path="/items?search=:query">
+          <Route exact path="/items">
             <Items />
+          </Route>
+          <Route exact path="/items/:id">
+            <Item />
           </Route>
           <Route path="/">
             <Home />
