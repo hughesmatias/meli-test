@@ -5,7 +5,9 @@ const Layout = ({
 }) => (
   <>
     <Search />
-    <section>{children}</section>
+    <main>
+      <section>{children}</section>
+    </main>
     <footer>Copyright 2020</footer>
   </>
 );
