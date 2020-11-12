@@ -9,6 +9,8 @@ import Home from './pages/Home';
 import Item from './pages/Item';
 import Items from './pages/Items';
 
+import './assets/scss/index.scss';
+
 const App = () => {
   return (
     <Router>
