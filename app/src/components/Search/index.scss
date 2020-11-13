@@ -1,0 +1,43 @@
+header {
+  @extend .container-fluid;
+  background: $yellow;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  $width: 33px;
+
+  nav {
+    @extend .row;
+
+    .logo-container {
+      @extend .col-xs-1;
+      @extend .col-xs-offset-1;
+
+      img.logo {
+        max-height: $width;
+      }
+    }
+  
+    .form-search {
+      @extend .col-xs-9;
+      display: inline;
+
+      input {
+        @extend .col-xs-10;
+        border: 0;
+        height: $width;
+      }
+
+      button {
+        background-image: url('../../assets/images/ic_Search.png');
+        background-position: center;
+        background-repeat: no-repeat;
+        border: 0;
+        height: $width;
+        width: $width;
+      }
+    }
+  }
+}

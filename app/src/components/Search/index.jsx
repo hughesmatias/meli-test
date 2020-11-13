@@ -1,10 +1,16 @@
+import logoMeli from '../../assets/images/Logo_ML.png';
+
 const Search = () => (
   <header>
     <nav>
-      <img src="/assets/images/Logo_ML.png" alt=""/>
-      <form>
-        <input type="text" placeholder="Nunca dejes de buscar" />
-        <button type="submit">Buscar</button>
+      <div className="logo-container">
+        <img className="logo" src={logoMeli} alt=""/>
+      </div>
+      <form className="form-search">
+        <div className="row">
+          <input type="text" placeholder="Nunca dejes de buscar" />
+          <button type="submit" />
+        </div>
       </form>
     </nav>
   </header>
