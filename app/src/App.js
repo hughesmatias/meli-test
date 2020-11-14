@@ -1,15 +1,12 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Switch, Route, useHistory } from "react-router-dom";
 
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Item from './pages/Item';
-import Items from './pages/Items';
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import Item from "./pages/Item";
+import Items from "./pages/Items";
 
-import './assets/scss/index.scss';
+import "./assets/scss/index.scss";
 
 const App = () => {
   return (
@@ -29,6 +26,6 @@ const App = () => {
       </Layout>
     </Router>
   );
-}
+};
 
 export default App;
