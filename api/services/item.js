@@ -4,16 +4,29 @@ const {
 } = require('dotenv').config().parsed;
 
 class ItemService {
-  getItem(id) {
+  async getById(id) {
     // call external service
-    return false;
+    // a API_MELI/items/:id
+    // a API_MELI/items/:id/description
+    const {
+      data,
+    } = await axios.get(`${API_EXT}/items/${id}`);
+    const {
+      data: description,
+    } = await axios.get(`${API_EXT}/items/${id}/description`);
+    console.log('get by id');
+
+    return {
+      data,
+      description,
+    };
   };
 
   async search(query) {
     // call external serfice
     const {
       data,
-    } = await axios.get(`${API_EXT}/search?q=${query}&limit=4`);
+    } = await axios.get(`${API_EXT}/sites/MLA/search?q=${query}&limit=4`);
     console.log('search request');
     return data;
   };
