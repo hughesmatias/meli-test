@@ -14,6 +14,7 @@ class ItemService {
     const {
       data,
     } = await axios.get(`${API_EXT}/search?q=${query}&limit=4`);
+    console.log('search request');
     return data;
   };
 };

@@ -13,7 +13,7 @@ module.exports = {
       price: {
         currency: item.currency_id,
         amount: item.price.toString().split(".")[0],
-        decimal: item.price.toString().split(".")[1] || 00,
+        decimal: item.price.toString().split(".")[1] || '00',
       },
       picture: item.thumbnail,
       condition: item.condition,
