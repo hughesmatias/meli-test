@@ -1,0 +1,11 @@
+article.items-container {
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      @extend .row;
+    }
+  }
+}

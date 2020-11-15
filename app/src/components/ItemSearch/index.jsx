@@ -1,16 +1,26 @@
-const ItemSearch = () => (
-  <div>
-    <img src="" alt=""/>
+import { formarCurrency } from '../../utils/formater';
+
+const ItemSearch = ({
+  title,
+  picture,
+  price: {
+    amount,
+    decimal,
+    currency,
+  },
+}) => (
+  <div className="item-container">
+    <img src={picture} alt={title} />
     <div className="information">
-      <div>
-        <span>precio</span>
+      <div className="price">
+        <span>{formarCurrency(currency)} </span><span>{amount},{decimal}</span>
       </div>
       <div>
-        <span>titulo</span>
+        <span>{title}</span>
       </div>
-      <div>
-        localidad
-      </div>
+    </div>
+    <div className="location">
+      localidad
     </div>
   </div>
 );
