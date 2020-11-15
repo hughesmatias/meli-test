@@ -9,6 +9,11 @@ $size: 180px;
   background: white;
   padding: $gutter / 2;
 
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
   img {
     background: grey;
     width: $size;

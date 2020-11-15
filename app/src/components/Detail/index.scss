@@ -1,0 +1,51 @@
+@import '../../assets/scss/variables';
+
+.description-container {
+  @extend .col-xs-9;
+  @extend .col-xs-offset-1;
+  background: white;
+
+  .main-information {
+    @extend .row;
+    display: flex;
+
+    .product {
+      @extend .col-xs-7;
+    }
+
+    .information {
+      @extend .col-xs-5;
+      padding: $gutter $gutter 0 0;
+
+      h4 {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0 0 $gutter /2;
+        text-transform: capitalize;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .price {
+        font-size: 46px;
+        margin: $gutter 0;
+      }
+    }
+  }
+
+  .detail {
+    margin-left: $gutter;
+
+    h3 {
+      font-size: 23px;
+    }
+
+    p {
+      font-size: 16px;
+      padding: $gutter $gutter $gutter 0;
+      color: $black;
+    }
+  }
+}

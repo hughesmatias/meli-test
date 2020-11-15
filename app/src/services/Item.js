@@ -26,6 +26,14 @@ export const getItems = async (query) => {
   return data;
 };
 
+export const getById = async (id) => {
+  const {
+    data,
+  } = await request('get', `${REACT_APP_API}/api/items/${id}`);
+  return data;
+};
+
 export default {
   getItems,
+  getById,
 };

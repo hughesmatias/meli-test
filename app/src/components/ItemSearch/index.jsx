@@ -1,6 +1,7 @@
 import { formarCurrency } from '../../utils/formater';
 
 const ItemSearch = ({
+  id,
   title,
   picture,
   price: {
@@ -16,7 +17,7 @@ const ItemSearch = ({
         <span>{formarCurrency(currency)} </span><span>{amount},{decimal}</span>
       </div>
       <div>
-        <span>{title}</span>
+        <a href={`/items/${id}`}>{title}</a>
       </div>
     </div>
     <div className="location">

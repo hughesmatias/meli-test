@@ -5,6 +5,7 @@
 // Components
 @import '../../components/Search/index.scss';
 @import '../../components/ItemSearch/index.scss';
+@import '../../components//Detail//index.scss';
 
 // Pages
 @import '../../pages/Items/index.scss';
@@ -17,4 +18,19 @@ body {
 
 main {
   @extend .container-fluid;
+}
+
+// buttons
+
+.btn {
+  border: 1px solid;
+  border-radius: 4px;
+  font-size: 20px;
+  height: $gutter *1.5;
+  width: 100%;
+
+  &.primary {
+    color: white;
+    background: $blue;
+  }
 }
