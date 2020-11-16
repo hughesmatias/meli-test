@@ -10,13 +10,18 @@ const Item = () => {
     id,
   } = useParams();
   const [item, setItem] = useState(false);
+  const [error, setError] = useState(false);
 
   const buyAction = () => alert('Comprame en MELI');
 
   useEffect(() => {
     const getItemById = async(id) => {
-      const data = await ItemService.getById(id);
-      setItem(data.item);
+      try {
+        const data = await ItemService.getById(id);
+        setItem(data.item);
+      } catch(err) {
+        setError(err);
+      }
     };
     getItemById(id);
 
@@ -26,7 +31,8 @@ const Item = () => {
   }, [id]);
 
   return (
-    item ? (
+    error ? <p>{error}</p> :
+    item && !error ? (
     <>
       {item.category && <BreadCrumb data={item.category} />}
       <Detail {...item} buyAction={buyAction} />

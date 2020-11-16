@@ -12,10 +12,15 @@ router.get('/items', async ({ query }, res) => {
 });
 
 router.get('/items/:id', async (req, res) => {
-  const item = await ItemService.getById(req.params.id);
-
-  // res.end(req.params.id + ' item ID');
-  res.json(formatItem(item));
+  try {
+    const item = await ItemService.getById(req.params.id);
+    // res.end(req.params.id + ' item ID');
+    res.json(formatItem(item));
+  } catch(error) {
+    res.status(404).json({
+      message: error.message,
+    });
+  }
 });
 
 router.get('/', (req, res) => res.end('Version 0.0.1'));

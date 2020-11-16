@@ -16,6 +16,8 @@ const request = (method, url) => (
     method,
     url,
     base: config,
+  }).catch((err) => {
+    throw err.response.data && err.response.data.message || "Error";
   })
 );
 
