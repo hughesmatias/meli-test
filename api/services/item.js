@@ -1,6 +1,7 @@
 const axios = require("axios");
 const {
   API_EXT,
+  QUERY_SEARCH_LIMIT,
 } = require('dotenv').config().parsed;
 
 class ItemService {
@@ -30,7 +31,7 @@ class ItemService {
     // call external serfice
     const {
       data,
-    } = await axios.get(`${API_EXT}/sites/MLA/search?q=${query}&limit=4`);
+    } = await axios.get(`${API_EXT}/sites/MLA/search?q=${query}&limit=${QUERY_SEARCH_LIMIT}`);
     console.log('search request');
     return data;
   };
