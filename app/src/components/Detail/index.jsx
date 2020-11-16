@@ -1,4 +1,4 @@
-import { formarCurrency, formatStatics } from '../../utils/formater';
+import { formarCurrency, formatStatics, getSingularOrPlural } from '../../utils/formater';
 
 const Detail = ({
   title,
@@ -17,7 +17,7 @@ const Detail = ({
     <div className="main-information">
       <img className="product" src={picture} alt={title} />
       <div className="information">
-        <h4>{formatStatics(condition)} - {sold_quantity}</h4>
+        <h4>{formatStatics(condition)} - {sold_quantity} {getSingularOrPlural(sold_quantity, 'vendido', 'vendidos')}</h4>
         <h1>{title}</h1>
         <div className="price"><span>{formarCurrency(currency)} </span><span>{amount},{decimal}</span></div>
         <button className="btn primary" type="button" onClick={buyAction}>Comprar</button>
