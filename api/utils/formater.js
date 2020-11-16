@@ -20,7 +20,6 @@ const getItemInformation = (item) => ({
 module.exports = {
   formatSearchItems: ({
     results: items,
-    available_filters,
   }) => ({
     author: {
       name,
@@ -29,12 +28,12 @@ module.exports = {
     items: [...items.map(item => ({
       ...getItemInformation(item),
     }))],
-    categories: (available_filters.find(filter => filter.id == 'category') && [...available_filters.find(filter => filter.id == 'category').values.map(item => item.name)])
   }),
 
   formatItem: ({
     data: item,
     description,
+    categoryData,
   }) => ({
     author: {
       name,
@@ -44,6 +43,7 @@ module.exports = {
       ...getItemInformation(item),
       sold_quantity: item.sold_quantity,
       description: description.plain_text,
-    }
+      category: categoryData.path_from_root,
+    },
   })
 }

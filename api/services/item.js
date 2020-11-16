@@ -12,6 +12,9 @@ class ItemService {
       data,
     } = await axios.get(`${API_EXT}/items/${id}`);
     const {
+      data: categoryData,
+    } = await axios.get(`${API_EXT}/categories/${data.category_id}`);
+    const {
       data: description,
     } = await axios.get(`${API_EXT}/items/${id}/description`);
     console.log('get by id');
@@ -19,6 +22,7 @@ class ItemService {
     return {
       data,
       description,
+      categoryData,
     };
   };
 
