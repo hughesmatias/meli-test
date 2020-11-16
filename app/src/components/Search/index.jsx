@@ -4,7 +4,9 @@ const Search = ({ onSubmit, setSearchValue, searchValue }) => (
   <header>
     <nav>
       <div className="logo-container">
-        <img className="logo" src={logoMeli} alt="" />
+        <a href="/">
+          <img className="logo" src={logoMeli} alt="" />
+        </a>
       </div>
       <form className="form-search" onSubmit={onSubmit}>
         <div className="row">
