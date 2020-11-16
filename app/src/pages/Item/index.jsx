@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Detail from '../../components/Detail';
+import BreadCrumb from '../../components/BreadCrumb';
 import ItemService from '../../services/Item';
+import Loading from '../../components/Loading';
 
 const Item = () => {
   const {
@@ -24,7 +26,12 @@ const Item = () => {
   }, [id]);
 
   return (
-    item ? <Detail {...item} buyAction={buyAction} /> : <div>Cargando...</div>
+    item ? (
+    <>
+      {item.category && <BreadCrumb data={item.category} />}
+      <Detail {...item} buyAction={buyAction} />
+    </>)
+    : <Loading message="Cargando" />
   );
 }
 

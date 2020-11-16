@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import ItemSearch from '../../components/ItemSearch';
+import Loading from '../../components/Loading';
 import ItemService from '../../services/Item';
 
 import ItemContext from '../../utils/contexts/Item';
@@ -29,7 +30,7 @@ const Items = () => {
     return () => ({
       items: false,
     })
-  }, [itemContext.search]);
+  });
 
   const goToDetail = (id) => history.push(`/items/${id}`);
 
@@ -39,7 +40,7 @@ const Items = () => {
         <ul>
           {items.map(item => <li key={item.id}><ItemSearch goToDetail={goToDetail} {...item} /></li>)}
         </ul>
-        ) : <h2>No hay resultados</h2>) : <h2>Buscando...</h2>}
+        ) : <h2>No hay resultados</h2>) : <Loading message="Buscando" />}
         {error && <h2>Hubo un error</h2>}
     </article>
   );

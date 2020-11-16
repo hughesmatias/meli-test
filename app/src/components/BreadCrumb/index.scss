@@ -1,0 +1,15 @@
+@import '../../assets/scss/variables';
+
+ul.breadcrumb {
+  @extend .col-xs-offset-1;
+  list-style: none;
+
+  li {
+    color: $black;
+    display: inline-block;
+
+    &.last {
+      font-weight: bold;
+    }
+  }
+}

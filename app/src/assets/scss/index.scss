@@ -6,6 +6,8 @@
 @import '../../components/Search/index.scss';
 @import '../../components/ItemSearch/index.scss';
 @import '../../components//Detail//index.scss';
+@import '../../components/BreadCrumb/index.scss';
+@import '../../components/Loading/index.scss';
 
 // Pages
 @import '../../pages/Items/index.scss';
@@ -18,6 +20,13 @@ body {
 
 main {
   @extend .container-fluid;
+}
+
+article.home-article {
+  @extend .col-xs-offset-1;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
 }
 
 // buttons
