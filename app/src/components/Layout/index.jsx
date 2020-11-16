@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
+import ItemContext from "../../utils/contexts/Item";
 import Search from "../Search";
 
 const Layout = ({ children }) => {
   const history = useHistory();
-  const location = useLocation();
-  const [searchValue, setSearchValue] = useState(location.search.split("?search=")[1] || "");
+  const itemContext = useContext(ItemContext);
   const onSubmit = (event) => {
     event.preventDefault();
-    history.push('/items?search='+ searchValue);
+    history.push('/items?search='+ itemContext.search);
   };
 
   return (
     <>
       <Search
         onSubmit={onSubmit}
-        searchValue={searchValue}
-        setSearchValue={(event) => setSearchValue(event.target.value)}
+        searchValue={itemContext.search}
+        setSearchValue={(event) => itemContext.setSearch(event.target.value)}
       />
       <main>
         <section>{children}</section>

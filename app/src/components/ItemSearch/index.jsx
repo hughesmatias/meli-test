@@ -9,6 +9,8 @@ const ItemSearch = ({
     decimal,
     currency,
   },
+  location,
+  goToDetail
 }) => (
   <div className="item-container">
     <img src={picture} alt={title} />
@@ -17,11 +19,11 @@ const ItemSearch = ({
         <span>{formarCurrency(currency)} </span><span>{amount},{decimal}</span>
       </div>
       <div>
-        <a href={`/items/${id}`}>{title}</a>
+        <button className="btn link" onClick={() => goToDetail(id)}>{title}</button>
       </div>
     </div>
     <div className="location">
-      localidad
+      {location}
     </div>
   </div>
 );

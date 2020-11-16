@@ -33,4 +33,11 @@ main {
     color: white;
     background: $blue;
   }
+
+  &.link {
+    border: 0;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
 }
