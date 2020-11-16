@@ -1,0 +1,14 @@
+version: "2"
+services:
+  api:
+    container_name: api-meli
+    restart: always
+    build: ./api/
+    ports:
+      - "5000:5000"
+  app:
+    container_name: app-meli
+    restart: always
+    build: ./app/
+    ports:
+      - "3000:80"

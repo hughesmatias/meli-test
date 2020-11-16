@@ -70,4 +70,4 @@ En el proyecto api y app -> usar npm install como cualquier proyecto node.
 Correr la api y app con npm start.
 
 ### Docker
-En desarrollo...
+Cuenta con dockerfiles independientes. Es posible correr toda la app con docker-compose
